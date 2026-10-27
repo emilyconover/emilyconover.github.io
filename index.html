@@ -1,202 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emily Conover — Science Journalist</title>
-  <meta name="description" content="Emily Conover is a science journalist covering physics at Science News." />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emily Conover · Physics journalist</title>
+<meta name="description" content="Emily Conover is a physics reporter at Science News with a PhD in physics from the University of Chicago.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%9B%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F8FA; --ink:#14213A; --muted:#5A6678; --rule:#D5DCE5; --accent:#1E6FD9; --track:#1E6FD9;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0E1626; --ink:#E7ECF4; --muted:#9AA7BB; --rule:#26324A; --accent:#5AA9FF; --track:#5AA9FF}
+}
+:root[data-theme="dark"]{--bg:#0E1626; --ink:#E7ECF4; --muted:#9AA7BB; --rule:#26324A; --accent:#5AA9FF; --track:#5AA9FF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:1.125rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;max-width:64rem;margin:0 auto;padding:1.5rem;font-family:var(--sans);font-size:.95rem;position:relative;z-index:2}
+header.top nav{display:flex;gap:1.5rem}
+header.top a{text-decoration:none;color:var(--muted)}
+header.top a:hover{color:var(--accent)}
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden}
+.hero .wrap{position:relative;z-index:1;width:100%}
+h1{font-weight:400;font-size:clamp(3rem,9vw,5.75rem);line-height:1;letter-spacing:-.025em;margin:0 0 1.5rem}
+.lede{font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.45;max-width:32rem;margin:0;color:var(--ink)}
+.lede span{color:var(--muted)}
+.tracks{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.5}
+.tracks path{stroke-width:1.8;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.2s var(--d) cubic-bezier(.3,.6,.2,1) forwards;stroke:var(--track);fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tracks .ar{stroke-dasharray:none;stroke-dashoffset:0;opacity:0;animation:fade .5s var(--d) forwards}
+.tracks .vx{fill:var(--accent);opacity:0;animation:fade .4s var(--d) forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+.tracks .x{stroke:var(--track);fill:none;stroke-linecap:round}
+.tracks .nodes circle{fill:var(--accent);opacity:.85}
+.tracks .grow{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);animation:grow 2.8s .4s cubic-bezier(.45,.1,.3,1) forwards}
+@keyframes grow{to{transform:scaleY(1)}}
+@keyframes pop{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.tracks path,.tracks .ar,.tracks .vx{animation:none;stroke-dashoffset:0;opacity:1}.tracks .ar{stroke-dashoffset:0}html{scroll-behavior:auto}}
+section{padding:4.5rem 0 0}
+h2{font-family:var(--sans);font-weight:600;font-size:1rem;letter-spacing:0;margin:0 0 1.75rem;color:var(--muted)}
+p{margin:0 0 1.25rem}
+.about{display:grid;grid-template-columns:9rem 1fr;gap:1.75rem;align-items:start}
+.headshot{margin:0;aspect-ratio:1/1;background:var(--rule);overflow:hidden;border-radius:50%}
+.headshot img{display:block;width:100%;height:100%;object-fit:cover}
+.work{list-style:none;margin:0;padding:0}
+.work li{padding:1.25rem 0;border-top:1px solid var(--rule)}
+.work li:last-child{border-bottom:1px solid var(--rule)}
+.work a{font-size:1.3rem;line-height:1.3;text-decoration:none;display:block}
+.work small{display:block;margin-top:.35rem;font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+.cv{display:grid;grid-template-columns:7.5rem 1fr;gap:.35rem 1.5rem;margin:0}
+.cv dt{font-family:var(--sans);font-size:.95rem;color:var(--muted);padding-top:.2rem;font-variant-numeric:tabular-nums}
+.cv dd{margin:0 0 1.1rem}
+.cv dd b{font-weight:500}
+.cv dd span{display:block;color:var(--muted);font-size:1rem}
+.list{margin:0;padding:0;list-style:none}
+.list li{margin-bottom:.6rem}
+.contact{display:grid;gap:1.25rem;max-width:32rem;margin-top:1.5rem}
+.contact label{display:grid;gap:.4rem;font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+.contact input,.contact textarea{width:100%;font-family:var(--serif);font-size:1.05rem;line-height:1.5;color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:12px;padding:.65rem .8rem}
+.contact textarea{min-height:8rem;resize:vertical}
+.contact input:focus,.contact textarea:focus{border-color:var(--accent)}
+.contact button{justify-self:start;font-family:var(--sans);font-weight:500;font-size:.95rem;color:var(--bg);background:var(--accent);border:0;border-radius:12px;padding:.7rem 1.4rem;cursor:pointer}
+.contact button:hover{filter:brightness(1.12)}
+footer{margin-top:6rem;padding:2rem 0 3rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+@media (max-width:34rem){.tracks{opacity:.3}.about{grid-template-columns:6.5rem 1fr;gap:1.1rem;font-size:1.05rem}.cv{grid-template-columns:1fr}.cv dt{padding-top:0}.cv dd{margin-bottom:1.25rem}header.top nav{gap:1rem}}
+</style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-name" href="#about">Emily Conover</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+<header class="top">
+  <a href="#top" style="color:var(--ink);font-weight:500">Emily Conover</a>
+  <nav aria-label="Primary">
+    <a href="#background">Background</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <svg class="tracks" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+      <path pathLength="1" style="--d:0.30s" d="M715 195L900 262"/>
+      <path pathLength="1" style="--d:0.30s" d="M715 515L900 448"/>
+      <path pathLength="1" style="--d:1.70s" d="M900 262L1085 195"/>
+      <path pathLength="1" style="--d:1.70s" d="M900 448L1085 515"/>
+      <path class="ar" style="--d:0.70s" transform="translate(807 228) rotate(19)" d="M-6 -6L3 0L-6 6"/>
+      <path class="ar" style="--d:0.70s" transform="translate(807 481) rotate(-19)" d="M-6 -6L3 0L-6 6"/>
+      <path class="ar" style="--d:2.00s" transform="translate(992 228) rotate(-19)" d="M-6 -6L3 0L-6 6"/>
+      <path class="ar" style="--d:2.00s" transform="translate(992 481) rotate(19)" d="M-6 -6L3 0L-6 6"/>
+      <path pathLength="1" style="--d:1.0s" d="M900.0 262.0L901.0 265.1L902.5 268.2L903.6 271.3L903.6 274.4L902.3 277.5L900.0 280.6L897.3 283.7L895.0 286.8L893.9 289.9L894.5 293.0L896.7 296.1L900.0 299.2L903.6 302.3L906.4 305.4L907.6 308.5L906.7 311.6L904.0 314.7L900.0 317.8L895.9 320.9L892.7 324.0L891.5 327.1L892.6 330.2L895.7 333.3L900.0 336.4L904.4 339.5L907.7 342.6L908.9 345.7L907.8 348.8L904.5 351.9L900.0 355.0L895.5 358.1L892.2 361.2L891.1 364.3L892.3 367.4L895.6 370.5L900.0 373.6L904.3 376.7L907.4 379.8L908.5 382.9L907.3 386.0L904.1 389.1L900.0 392.2L896.0 395.3L893.3 398.4L892.4 401.5L893.6 404.6L896.4 407.7L900.0 410.8L903.3 413.9L905.5 417.0L906.1 420.1L905.0 423.2L902.7 426.3L900.0 429.4L897.7 432.5L896.4 435.6L896.4 438.7L897.5 441.8L899.0 444.9L900.0 448.0"/>
+      <circle class="vx" style="--d:.9s" cx="900" cy="262" r="4.5"/><circle class="vx" style="--d:.9s" cx="900" cy="448" r="4.5"/>
+
+
+
+
+    </svg>
+    <div class="wrap">
+      <h1>Emily Conover</h1>
+      <p class="lede">I’m a physics reporter at <i>Science News</i>, with a PhD in physics and an enduring curiosity about our world, our universe, and the way things work.</p>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <figure class="headshot"><img src="headshot_square.jpg" alt="Portrait of Emily Conover" width="400" height="400" onerror="this.style.display='none'"></figure>
+      <div>
+        <p>I’ve covered physics for Science News since 2016. I got my PhD from the University of Chicago in 2014, where I studied the idiosyncrasies of subatomic particles called neutrinos. I’m a past president of the D.C. Science Writers Association.</p>
+	<p>I previously wrote for the American Physical Society, Science Magazine and, through a AAAS Mass Media Fellowship, the Milwaukee Journal Sentinel.</p>
+      </div>
+    </div>
+  </section>
+
+ 
+<!--
+  <section id="work">
+  <div class="wrap">
+      <h2>Selected work</h2>
+      <ul class="work">
+        <li><a href="#">Replace with a story headline</a><small>Science News · 2025</small></li>
+        <li><a href="#">Replace with a story headline</a><small>Science News · 2024</small></li>
+        <li><a href="#">Replace with a story headline</a><small>Science News · 2022</small></li>
+        <li><a href="#">Replace with a story headline</a><small>APS News · 2015</small></li>
+	</ul>
+	
+      <p style="margin-top:1.25rem"><a href="https://www.sciencenews.org/author/emily-conover" style="font-family:var(--sans);font-size:.95rem">All stories at Science News</a></p>
+    </div>
+    </section>
+ -->
+
+  <section id="background">
+    <div class="wrap">
+      <h2>Background</h2>
+      <dl class="cv">
+	<dt>2021–present</dt>
+        <dd><b>Senior physics writer</b> <span>Science News</span></dd>
+        <dt>2016–2021</dt>
+        <dd><b>Physics writer</b> <span>Science News</span></dd>
+        <dt>2015–2016</dt>
+        <dd><b>Science writer</b><span>APS News, American Physical Society</span></dd>
+        <dt>2015</dt>
+        <dd><b>News intern</b> <span>Science Magazine</span></dd>
+        <dt>2014</dt>
+        <dd><b>AAAS Mass Media Fellow</b><span>Milwaukee Journal Sentinel</span></dd>
+        <dt>2014</dt>
+        <dd><b>PhD in physics, University of Chicago</b><span>Research on neutrinos</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="wrap">
+      <h2>Awards</h2>
+      <ul class="list">
+	<li>Telly Gold Award. <a href="https://www.tellyawards.com/winners/2026/non-broadcast/general-explainer/the-science-behind-nuclear-weapons-testing/359127/">The science behind nuclear weapons testing</a>. 2026.</li>
+        <li>Winner, Science Communication Award, Acoustical Society of America. <a href="https://www.sciencenews.org/article/notre-dame-cathedral-fire-legendary-acoustics-restoration">How to restore the legendary acoustics of Notre Dame</a>. 2021.</li>
+        <li>Winner, D.C. Science Writers Association Newsbrief Award. <a href="https://www.sciencenews.org/article/how-ravens-caused-ligo-data-glitch">How ravens caused a LIGO data glitch</a>. 2018.</li>
+	<li>Winner, D.C. Science Writers Association Newsbrief Award. <a href="https://www.science.org/content/article/video-how-prevent-sheep-traffic-jam">How to prevent a sheep traffic jam</a>. 2015.</li>
+	<li>Winner, Neutrino Oscillation Analogy Writing Contest. Symmetry Magazine. 2013.</li>
       </ul>
     </div>
-  </nav>
-
-  <!-- About -->
-  <section id="about">
-    <p class="hero-name">Emily Conover</p>
-    <p class="hero-title">Science journalist · Physics reporter at <em>Science News</em></p>
-    <h2>About</h2>
-    <div class="bio">
-      <p>
-        I cover physics and related fields for <a href="https://www.sciencenews.org" target="_blank" rel="noopener">Science News</a>,
-        where I write about everything from particle physics and cosmology to quantum computing and
-        materials science.
-      </p>
-      <p>
-        Before becoming a journalist, I earned a PhD in physics from the University of Chicago,
-        where I studied neutrinos. I served as president of the
-        <a href="https://dcswa.org" target="_blank" rel="noopener">D.C. Science Writers Association</a> in 2021–2022.
-      </p>
-    </div>
   </section>
 
-  <!-- Selected Work -->
-  <section id="work">
-    <h2>Selected Work</h2>
-    <ul class="work-list">
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/string-theory-assumptions-bootstrap" target="_blank" rel="noopener">
-          To get string theory, you need only four physics assumptions
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>May 2026</span>
-        </div>
-        <p class="work-desc">Tenets of quantum mechanics and special relativity, among other theoretical ideas, lead inexorably to string theory.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/black-holes-hawking-radiation-double-copy" target="_blank" rel="noopener">
-          To understand black holes, physicists turn to a mathematical 'Rosetta stone'
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>May 8, 2026</span>
-        </div>
-        <p class="work-desc">A mathematical connection called the double copy links particle physics with gravitational equations, offering new perspectives on Hawking radiation.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/quantum-earth-magnetic-field-space" target="_blank" rel="noopener">
-          A grapefruit-sized quantum device mapped Earth's magnetic field from space
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>May 7, 2026</span>
-        </div>
-        <p class="work-desc">On the International Space Station, a cube holding a diamond-based sensor revealed the potential for quantum magnetometers.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/neutrino-force-particle-physics" target="_blank" rel="noopener">
-          A strange 'neutrino force' helped heal a crack in particle physics
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>April 16, 2026</span>
-        </div>
-        <p class="work-desc">An overlooked force involving neutrinos helps reconcile atomic physics measurements with standard model predictions.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/exploding-black-holes-antimatter" target="_blank" rel="noopener">
-          Exploding black holes could explain an antimatter mystery
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>April 10, 2026</span>
-        </div>
-        <p class="work-desc">Shock waves from minuscule black holes in the early cosmos might account for the scarcity of antimatter relative to matter.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/quantum-bits-crack-internet-encryption" target="_blank" rel="noopener">
-          Just 10,000 quantum bits might crack internet encryption schemes
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>April 1, 2026</span>
-        </div>
-        <p class="work-desc">Atom-based quantum computers could potentially compromise encrypted data faster than previously anticipated.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/quantum-physics-location-security" target="_blank" rel="noopener">
-          Quantum physics can confirm where someone is located
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>March 30, 2026</span>
-        </div>
-        <p class="work-desc">Entanglement properties between distant particles can verify an individual's claimed location.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/water-critical-point-supercooled-liquid" target="_blank" rel="noopener">
-          Water has a newfound 'critical point' that may help explain its quirks
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>March 26, 2026</span>
-        </div>
-        <p class="work-desc">At cold temperatures, water has two different liquid phases, which become one at the critical point.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/antimatter-traveled-truck-delivery-cern" target="_blank" rel="noopener">
-          Antimatter traveled by truck for the first time
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>March 24, 2026</span>
-        </div>
-        <p class="work-desc">Researchers are developing an antimatter transport program to deliver antiprotons between European research facilities.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/phantom-crane-fly-legs-physics" target="_blank" rel="noopener">
-          These insects fly with their legs. Physics explains how.
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>March 24, 2026</span>
-        </div>
-        <p class="work-desc">Phantom crane flies adjust leg angles to regulate aerodynamic drag for improved wind navigation.</p>
-      </li>
-
-      <li class="work-item">
-        <a href="https://www.sciencenews.org/article/static-electricity-mystery-to-surface" target="_blank" rel="noopener">
-          A static electricity mystery comes to the surface
-        </a>
-        <div class="work-meta">
-          <span>Science News</span>
-          <span>March 18, 2026</span>
-        </div>
-        <p class="work-desc">The seemingly random charging of identical substances depends on carbonaceous molecules adhering to their exterior.</p>
-      </li>
-
-    </ul>
-
-    <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--gray);">
-      <a href="https://www.sciencenews.org/author/emily-conover" target="_blank" rel="noopener" style="color: var(--gray);">View all articles at Science News &rarr;</a>
-    </p>
-  </section>
-
-  <!-- Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact-blurb">
-      The best way to reach me is by email. I'm also on social media.
-    </p>
-    <div class="contact-links">
-      <a href="mailto:econover@sciencenews.org">
-        <span class="contact-label">Email</span>
-        econover@sciencenews.org
-      </a>
-      <a href="https://twitter.com/emcconover" target="_blank" rel="noopener">
-        <span class="contact-label">Twitter / X</span>
-        @emcconover
-      </a>
-      <a href="https://www.linkedin.com/in/emily-conover" target="_blank" rel="noopener">
-        <span class="contact-label">LinkedIn</span>
-        emily-conover
-      </a>
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p><a href="https://www.sciencenews.org/author/emily-conover">Science News profile</a> · <a href="https://bsky.app/profile/econover.bsky.social">Bluesky</a> · <a href="https://www.linkedin.com/in/emilyconover/">LinkedIn</a></p>
+      <p>For questions, story tips, or speaking inquiries, please use this form.</p>
+      <form class="contact" action="https://formspree.io/f/mjyyykyl" method="POST">
+	<label>Name <input type="text" name="name" required></label>
+	<label>Email <input type="email" name="email" required></label>
+	<label>Message <textarea name="message" rows="5" required></textarea></label>
+	<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+	<button type="submit">Send</button>
+      </form>
     </div>
   </section>
+</main>
 
-  <footer>
-    &copy; 2026 Emily Conover
-  </footer>
-
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Emily Conover</span>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
