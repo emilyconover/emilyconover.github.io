@@ -1,5 +1,10 @@
 [
   {
+    "title": "What the Trump administration’s focus on AI and quantum means for science",
+    "url": "https://www.sciencenews.org/article/trump-ai-quantum-science",
+    "date": "2026-11-16"
+  },
+  {
     "title": "Light is hard to block from every direction. This physicist found a way",
     "url": "https://www.sciencenews.org/article/light-block-direction-physicist-sn10",
     "date": "2026-11-11"
@@ -43,10 +48,5 @@
     "title": "These neutrinos from the sun have the lowest energies ever seen",
     "url": "https://www.sciencenews.org/article/neutrinos-sun-lowest-energies-xenonnt",
     "date": "2026-09-14"
-  },
-  {
-    "title": "AI may have solved one of math’s biggest puzzles, raising controversy",
-    "url": "https://www.sciencenews.org/article/ai-math-puzzle-navier-stokes-openai",
-    "date": "2026-09-09"
   }
 ]
